@@ -101,7 +101,11 @@ public class MutatedZombie : MonoBehaviour
         // »ç¸Á
         agent.isStopped = true;
         animator.SetTrigger("Die");
-        Destroy(gameObject, 4f);
+        yield return new WaitForSeconds(4f);
+
+        gameObject.SetActive(false);
+        zombieState = ZombieState.PATROL;
+
         yield return null;
     }
 

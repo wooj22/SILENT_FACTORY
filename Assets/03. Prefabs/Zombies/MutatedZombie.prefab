@@ -434,6 +434,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffb1532bd36062242b16667a634946e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  zombieState: 0
+  hp: 150
+  walkSpeed: 1
+  runSpeed: 2.5
+  attackDamage: 10
+  attackcoolTime: 3
+  detectionRadius: 25
+  attackRadius: 3
+  findSFX: {fileID: 0}
+  attackSFX: {fileID: 0}
+  bloodEffect: {fileID: 0}
 --- !u!1 &691890238491153259
 GameObject:
   m_ObjectHideFlags: 0

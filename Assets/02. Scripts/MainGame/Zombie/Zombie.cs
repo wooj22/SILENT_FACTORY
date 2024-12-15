@@ -85,10 +85,14 @@ public class Zombie : MonoBehaviour
             }
         }
 
-        // »ç¸Á
+        // »ç¸Á ¹× ÃÊ±âÈ­
         agent.isStopped = true;
         animator.SetTrigger("Die");
-        Destroy(gameObject, 4f);
+        yield return new WaitForSeconds(4f);
+
+        gameObject.SetActive(false);
+        zombieState = ZombieState.IDLE;
+
         yield return null;
     }
 
