@@ -4,37 +4,49 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    // 체력 관련 변수
-    [SerializeField] private int maxHealth = 100; // 최대 체력
-    private int currentHealth;
+    [Header ("Player")]
+    [SerializeField] private int maxHealth = 100;
+    [SerializeField] private int currentHealth;
 
-    // 움직임 상태
-    public enum MovementState { Walking, Running, Sneaking }
+    [Header ("State")]
     public MovementState currentMovementState;
-
-    // 체력 상태
-    public enum HealthState { Normal, TakingDamage }
-    public HealthState currentHealthState;
-
-    // 장착 무기 현황
-    public enum WeaponType { AKM, R1895, S12k, Kar98 }
     public WeaponType currentWeapon;
+
+    public enum MovementState { Idle, Walking, Running, Sneaking }
+    public enum WeaponType { AKM, R1895, S12k, Kar98 }
+
+    public bool isDie;
 
     private void Awake()
     {
-        // 체력 초기화
+        // 초기 상태
+        isDie = false;
         currentHealth = maxHealth;
-
-        // 초기 상태 설정
-        currentMovementState = MovementState.Walking;
-        currentHealthState = HealthState.Normal;
+        currentMovementState = MovementState.Idle;
         currentWeapon = WeaponType.AKM;
     }
 
-    // 체력 관리
-    public void TakeDamage(int damage)
+    // 일반 공격
+    public void Attack()
     {
-        currentHealthState = HealthState.TakingDamage;
+        Debug.Log("일반공격");
+    }
+
+    // 특수 공격
+    public void SpecialAttack()
+    {
+        Debug.Log("특수 공격");
+    }
+
+    // 재장전
+    public void Reloading()
+    {
+        Debug.Log("재장전");
+    }
+
+    // 피격
+    public void Damaged(int damage)
+    {
         currentHealth -= damage;
 
         if (currentHealth <= 0)
@@ -42,8 +54,10 @@ public class Player : MonoBehaviour
             currentHealth = 0;
             Die();
         }
+        Debug.Log("공격받음");
     }
 
+    // 힐
     public void Heal(int healAmount)
     {
         currentHealth += healAmount;
@@ -51,24 +65,13 @@ public class Player : MonoBehaviour
         {
             currentHealth = maxHealth;
         }
+        Debug.Log("힐");
     }
 
-    // 플레이어 사망 처리
+    // 사망
     private void Die()
     {
-        Debug.Log("Player is Dead!");
-        // 추가적인 사망 처리 로직 구현 필요
-    }
-
-    // 현재 체력 반환
-    public int GetCurrentHealth()
-    {
-        return currentHealth;
-    }
-
-    // 무기 변경
-    public void EquipWeapon(WeaponType weapon)
-    {
-        currentWeapon = weapon;
+        isDie = true;
+        Debug.Log("죽음");
     }
 }

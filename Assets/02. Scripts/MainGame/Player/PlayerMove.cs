@@ -17,6 +17,7 @@ public class PlayerMove : MonoBehaviour
     // 컴포넌트
     private Rigidbody rb;
     private Camera playerCamera;
+    private Player player;
     private float currentSpeed;
     private float rotationX = 0f;
 
@@ -24,6 +25,7 @@ public class PlayerMove : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         playerCamera = GetComponentInChildren<Camera>();
+        player = GetComponent<Player>();
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
 
@@ -45,18 +47,30 @@ public class PlayerMove : MonoBehaviour
     private void MovePlayer()
     {
         // 속도 set
-        if (Input.GetKey(KeyCode.LeftShift))
+        if(Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) ||
+            Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
         {
-            currentSpeed = runSpeed;
-        }
-        else if (Input.GetKey(KeyCode.LeftControl))
-        {
-            currentSpeed = crouchSpeed;
+            if (Input.GetKey(KeyCode.LeftShift))
+            {
+                currentSpeed = runSpeed;
+                player.currentMovementState = Player.MovementState.Running;
+            }
+            else if (Input.GetKey(KeyCode.LeftControl))
+            {
+                currentSpeed = crouchSpeed;
+                player.currentMovementState = Player.MovementState.Sneaking;
+            }
+            else 
+            {
+                currentSpeed = walkSpeed;
+                player.currentMovementState = Player.MovementState.Walking;
+            }  
         }
         else
         {
-            currentSpeed = walkSpeed;
+            player.currentMovementState = Player.MovementState.Idle;
         }
+
 
         Vector3 moveDirection = (transform.right * Input.GetAxis("Horizontal") + transform.forward * Input.GetAxis("Vertical")).normalized;
         rb.velocity = new Vector3(moveDirection.x * currentSpeed, rb.velocity.y, moveDirection.z * currentSpeed);

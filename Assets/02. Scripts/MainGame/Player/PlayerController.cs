@@ -143,22 +143,19 @@ public class PlayerController : MonoBehaviour
         // 일반 공격
         if (Input.GetKey(attackkey))
         {
-            // Player.cs의 기본 공격 함수 호출
-            Debug.Log("일반공격");
+            player.Attack();
         }
 
         // 특수 공격
         if (Input.GetKey(speacialAttackkey))
         {
-            // Player.cs의 특수 공격 함수 호출
-            Debug.Log("특수공격");
+            player.SpecialAttack();
         }
 
         // 재장전
         if (Input.GetKeyDown(reloadKey))
         {
-            // Player.cs의 재장전 함수 호출
-            Debug.Log("재장전");
+            player.Reloading();
         }
     }
 
