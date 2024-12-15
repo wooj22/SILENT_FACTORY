@@ -367,7 +367,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bgmSource: {fileID: 619978528}
   sfxSource: {fileID: 619978527}
-  sfxClipList: []
+  sfxClipList:
+  - {fileID: 8300000, guid: 1e7a587164fcbef45b40536469e6c432, type: 3}
   fadeVolumeTime: 3
 --- !u!82 &619978527
 AudioSource:
@@ -675,7 +676,6 @@ GameObject:
   m_Component:
   - component: {fileID: 892632755}
   - component: {fileID: 892632756}
-  - component: {fileID: 892632757}
   m_Layer: 0
   m_Name: MainMenu
   m_TagString: Untagged
@@ -708,18 +708,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4a6e32f837201dc42923e31055dd335a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &892632757
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 892632754}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a08b06af70c6ba4c8ba0dccc4ca982b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &900737642
@@ -848,6 +836,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: Tutorial
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 619978526}
+        m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
+        m_MethodName: PlaySFX
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: SFX_Button
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1255041576
