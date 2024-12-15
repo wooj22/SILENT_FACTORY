@@ -94,9 +94,9 @@ GameObject:
   - component: {fileID: 4227677453017005569}
   - component: {fileID: 877874251924347165}
   - component: {fileID: 8679749869940040253}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Kit
-  m_TagString: Untagged
+  m_TagString: Kit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -3,7 +3,15 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Kit
+  - Essence
+  - 7.62mm
+  - 12Gauge
+  - .45ACP
+  - Zombie
+  - MutatedZombie
+  - Barrel
   layers:
   - Default
   - TransparentFX
@@ -16,7 +24,7 @@ TagManager:
   - 
   - 
   - Player
-  - 
+  - Interactable
   - 
   - 
   - 

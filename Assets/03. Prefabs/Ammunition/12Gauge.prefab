@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 8394190568854391893}
   - component: {fileID: 7895802379972289112}
   - component: {fileID: 5740686768551775031}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: 12Gauge
-  m_TagString: Untagged
+  m_TagString: 12Gauge
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

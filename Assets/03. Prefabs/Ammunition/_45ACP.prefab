@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 5334843255904658735}
   - component: {fileID: 3079656236049061468}
   - component: {fileID: 3445909241046593658}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: _45ACP
-  m_TagString: Untagged
+  m_TagString: .45ACP
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
