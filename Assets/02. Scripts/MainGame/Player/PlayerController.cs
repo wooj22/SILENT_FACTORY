@@ -38,6 +38,7 @@ public class PlayerController : MonoBehaviour
 
     [Header("---")]
     [SerializeField] private Player player;
+    [SerializeField] private Inventory inventory;
     [SerializeField] private Camera mainCamera;
 
     private void Update()
@@ -172,35 +173,35 @@ public class PlayerController : MonoBehaviour
                 if (hit.collider.CompareTag("Essence"))
                 {
                     Debug.Log("정수 습득");
-                    // 인벤토리에 ++
+                    inventory.UpdateEssence(1);
                     // 줍기 사운드
                     Destroy(hit.collider.gameObject);
                 }
                 else if (hit.collider.CompareTag("Kit"))
                 {
                     Debug.Log("구급상자 습득");
-                    // 인벤토리에 ++
+                    inventory.UpdateKit(1);
                     // 줍기 사운드
                     Destroy(hit.collider.gameObject);
                 }
                 else if (hit.collider.CompareTag("7.62mm"))
                 {
                     Debug.Log("7.62mm 습득");
-                    // 인벤토리에 ++
+                    inventory.Update762(40);
                     // 줍기 사운드
                     Destroy(hit.collider.gameObject);
                 }
                 else if (hit.collider.CompareTag("12Gauge"))
                 {
                     Debug.Log("12Gauge 습득");
-                    // 인벤토리에 ++
+                    inventory.Update12(12);
                     // 줍기 사운드
                     Destroy(hit.collider.gameObject);
                 }
                 else if (hit.collider.CompareTag(".45ACP"))
                 {
                     Debug.Log(".45ACP 습득");
-                    // 인벤토리에 ++
+                    inventory.Update45(30);
                     // 줍기 사운드
                     Destroy(hit.collider.gameObject);
                 }
