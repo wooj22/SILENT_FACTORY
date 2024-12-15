@@ -365,6 +365,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32f5f0727bdcff1469f3aad3bf37df05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bgmSource: {fileID: 619978528}
+  sfxSource: {fileID: 619978527}
+  sfxClipList: []
+  fadeVolumeTime: 3
 --- !u!82 &619978527
 AudioSource:
   m_ObjectHideFlags: 0
