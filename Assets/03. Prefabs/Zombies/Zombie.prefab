@@ -536,8 +536,8 @@ MonoBehaviour:
   speed: 1.5
   attackDamage: 5
   attackcoolTime: 5
-  detectionRadius: 15
-  attackRadius: 3
+  detectionRadius: 10
+  attackRadius: 2
   attackSFX: {fileID: 0}
   bloodEffect: {fileID: 0}
 --- !u!1 &691890238491153259

@@ -14375,7 +14375,7 @@ MonoBehaviour:
     type: 3}
   pos: {fileID: 516336811}
   parents: {fileID: 507548052}
-  pullingCount: 150
+  pullingCount: 80
   activeZombieMaxCount: 70
   zombieList: []
   posList: []
@@ -30557,7 +30557,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1121659950
 RectTransform:
   m_ObjectHideFlags: 0
@@ -48509,8 +48509,8 @@ MonoBehaviour:
     type: 3}
   pos: {fileID: 516336811}
   parents: {fileID: 1830744832}
-  pullingCount: 50
-  activeZombieMaxCount: 25
+  pullingCount: 15
+  activeZombieMaxCount: 10
   zombieList: []
   posList: []
 --- !u!1001 &1831612497
