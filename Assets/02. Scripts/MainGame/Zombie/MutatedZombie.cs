@@ -19,7 +19,7 @@ public class MutatedZombie : MonoBehaviour
     public float hp = 150f;
     public float walkSpeed = 1f;
     public float runSpeed = 2f;
-    public float attackDamage = 10f;     // 공격 데미지
+    public int attackDamage = 10;        // 공격 데미지
     public float attackcoolTime = 3f;    // 공격 쿨타임
     public float detectionRadius = 20f;  // 추적 범위
     public float attackRadius = 2.5f;      // 공격 범위
@@ -33,6 +33,7 @@ public class MutatedZombie : MonoBehaviour
     private Animator animator;
     private AudioSource audioSource;
     private Transform playerPos;
+    private Player player;
 
     // 순찰
     private GameObject posOb;
@@ -48,6 +49,7 @@ public class MutatedZombie : MonoBehaviour
         animator = GetComponent<Animator>();
         audioSource = GetComponent<AudioSource>();
         playerPos = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
 
         // 순찰 지점
         posOb = GameObject.Find("AIPos");
@@ -94,6 +96,9 @@ public class MutatedZombie : MonoBehaviour
                     agent.isStopped = true;
                     agent.SetDestination(playerPos.position);
                     animator.SetTrigger("Attack");
+                    // audioSource.PlayOneShot(attackSFX);
+                    Attack();
+                    yield return new WaitForSeconds(attackcoolTime);
                     break;
             }
         }
@@ -128,9 +133,7 @@ public class MutatedZombie : MonoBehaviour
     // 공격
     private void Attack()
     {
-        // 공격 쿨타임에 계산
-        // - 데미지 전달(플레이어 피격함수)
-        // audioSource.PlayOneShot(attackSFX);
+        player.Damaged(attackDamage);
     }
 
     // 피격

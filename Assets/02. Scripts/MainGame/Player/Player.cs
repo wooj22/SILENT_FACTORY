@@ -49,13 +49,12 @@ public class Player : MonoBehaviour
     public void Damaged(int damage)
     {
         currentHealth -= damage;
-        playerStateUI.UpdateHpUi();
-
         if (currentHealth <= 0)
         {
             currentHealth = 0;
             Die();
         }
+        playerStateUI.UpdateHpUi();
         Debug.Log("°ø°Ý¹ÞÀ½");
     }
 
@@ -63,12 +62,11 @@ public class Player : MonoBehaviour
     public void Heal(int healAmount)
     {
         currentHealth += healAmount;
-        playerStateUI.UpdateHpUi();
-
         if (currentHealth > maxHealth)
         {
             currentHealth = maxHealth;
         }
+        playerStateUI.UpdateHpUi();
         Debug.Log("Èú");
     }
 

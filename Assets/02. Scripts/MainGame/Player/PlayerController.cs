@@ -57,7 +57,7 @@ public class PlayerController : MonoBehaviour
         // 구급상자 사용
         if (Input.GetKeyDown(kitKey))
         {
-            // 구급상자 스크립트 만들면 거기 기능 호출
+            player.Heal(50);
         }
     }
 

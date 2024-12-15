@@ -18,7 +18,7 @@ public class Zombie : MonoBehaviour
     [Header("Zombie")]
     public float hp = 100f;
     public float speed = 1f;            
-    public float attackDamage = 5f;     // 공격 데미지
+    public int attackDamage = 5;        // 공격 데미지
     public float attackcoolTime = 5f;   // 공격 쿨타임
     public float detectionRadius = 15f; // 추적 범위
     public float attackRadius = 2.5f;     // 공격 범위
@@ -97,6 +97,9 @@ public class Zombie : MonoBehaviour
                     agent.isStopped = true;
                     agent.SetDestination(playerPos.position);
                     animator.SetTrigger("Attack");
+                    // audioSource.PlayOneShot(attackSFX);
+                    Attack();
+                    yield return new WaitForSeconds(attackcoolTime);
                     break; 
             }
         }
@@ -115,9 +118,7 @@ public class Zombie : MonoBehaviour
     // 공격
     private void Attack()
     {
-        // 공격 쿨타임에 계산
-        // - 데미지 전달(플레이어 피격함수)
-        // audioSource.PlayOneShot(attackSFX);
+        player.Damaged(attackDamage);
     }
 
     // 피격
