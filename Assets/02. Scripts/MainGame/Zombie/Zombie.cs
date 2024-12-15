@@ -5,162 +5,107 @@ using UnityEngine.AI;
 
 public class Zombie : MonoBehaviour
 {
-    [Header("Zombie Stats")]
-    public float health = 100f;
-    public float speed = 3f;
-    public int attackDamage = 5;
-    public float attackCooldown = 5f;
-    public float detectionRadius = 20f;
-    public float attackRadius = 5f;
+    [Header("State")]
+    public ZombieState zombieState;
+    public enum ZombieState
+    {
+        IDLE,
+        TRACE,
+        ATTACK,
+        DEAD
+    }
+
+    [Header("Zombie")]
+    public float hp = 100f;
+    public float speed = 1.5f;            
+    public float attackDamage = 5f;     // 공격 데미지
+    public float attackcoolTime = 5f;   // 공격 쿨타임
+    public float detectionRadius = 15f; // 추적 범위
+    public float attackRadius = 3f;     // 공격 범위
 
     [Header("Asset")]
     public AudioClip attackSFX;
     public AudioClip hitSFX;
-    public AudioClip deathSFX;
+    public AudioClip deadSFX;
     public GameObject bloodEffect;
 
-    // components
-    private NavMeshAgent navAgent;
+    private NavMeshAgent agent;
     private Animator animator;
-    private GameObject player;
+    private Transform playerPos;
 
-    // values
-    private bool isPlayerDetected = false;
-    private bool isPlayerInAttackRange = false;
-    private bool isDead = false;
+    private Coroutine zombieAiCo;
+    private bool isHearPlayerSound;
 
-    private float attackTimer = 0f;
-    private bool isStunned = false;
-
-    void Start()
+    private void Start()
     {
-        navAgent = GetComponent<NavMeshAgent>();
+        agent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
-        player = GameObject.FindGameObjectWithTag("Player");
+        playerPos = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
 
-        navAgent.speed = speed;
+        zombieAiCo = StartCoroutine(ZombieAI());
     }
 
-    void Update()
+    // 좀비 행동 패턴 ★  ---> isHearPlayerSound를 활용한 발소리 시스템 적용 필요!!!
+    private IEnumerator ZombieAI()
     {
-        if (isDead || isStunned) return;
+        WaitForSeconds ws = new WaitForSeconds(0.7f);
 
-        float playerDistance = Vector3.Distance(transform.position, player.transform.position);
-
-        // 플레이어 인식
-        if (playerDistance <= detectionRadius)
+        while (zombieState != ZombieState.DEAD)
         {
-            isPlayerDetected = true;
-            navAgent.SetDestination(player.transform.position);
-            animator.SetBool("isWalking", true);
-        }
-        else
-        {
-            isPlayerDetected = false;
-            navAgent.ResetPath();
-            animator.SetBool("isWalking", false);
-        }
+            yield return ws;  // 간격
 
-        // 공격 거리 체크
-        if (isPlayerDetected && playerDistance <= attackRadius)
-        {
-            isPlayerInAttackRange = true;
-            navAgent.isStopped = true;
+            // State
+            float currentDist = (playerPos.position - transform.position).magnitude;
 
-            if (attackTimer <= 0f)
+            if (currentDist < attackRadius )
+                zombieState = ZombieState.ATTACK;
+            else if (currentDist < detectionRadius)
+                zombieState = ZombieState.TRACE;
+            else
+                zombieState = ZombieState.IDLE;
+
+            // 살아있을 떄 행동
+            switch (zombieState)
             {
-                AttackPlayer();
-                attackTimer = attackCooldown;
+                case ZombieState.IDLE:      // 1. 기본
+                    agent.isStopped = true;
+                    animator.SetBool("Walk", false);
+                    break;
+                case ZombieState.TRACE:     // 2. 추적
+                    agent.isStopped = false;
+                    agent.SetDestination(playerPos.position);
+                    animator.SetBool("Walk", true);
+                    break;
+                case ZombieState.ATTACK:    // 3. 공격
+                    agent.isStopped = true;
+                    agent.SetDestination(playerPos.position);
+                    animator.SetTrigger("Attack");
+                    break; 
             }
         }
-        else
-        {
-            isPlayerInAttackRange = false;
-            navAgent.isStopped = false;
-        }
 
-        // 공격 쿨다운 감소
-        if (attackTimer > 0f)
-        {
-            attackTimer -= Time.deltaTime;
-        }
+        // 사망
+        agent.isStopped = true;
+        animator.SetTrigger("Die");
+        Destroy(gameObject, 4f);
+        yield return null;
     }
 
-    void AttackPlayer()
+    // 공격
+    private void Attack()
     {
-        if (isDead || isStunned) return;
 
-        // 공격 애니메이션 재생
-        animator.SetTrigger("Attack");
-
-        // 공격 SFX 재생
-        if (attackSFX)
-        {
-            AudioSource.PlayClipAtPoint(attackSFX, transform.position);
-        }
-
-        // 플레이어에게 데미지 전달
-        //player.GetComponent<PlayerHealth>()?.TakeDamage(attackDamage);
     }
 
-    public void TakeDamage(float damage)
+    // 피격
+    private void Hit(float damage)
     {
-        if (isDead) return;
-
-        // 피격 효과
-        health -= damage;
-        if (bloodEffect)
-        {
-            Instantiate(bloodEffect, transform.position, Quaternion.identity);
-        }
-
-        if (hitSFX)
-        {
-            AudioSource.PlayClipAtPoint(hitSFX, transform.position);
-        }
-
+        hp -= damage;
         animator.SetTrigger("Hit");
 
-        // 죽음 체크
-        if (health <= 0f)
+        if(hp < 0.001f)
         {
-            Die();
+            zombieState = ZombieState.DEAD;
         }
-    }
-
-    public void TakeStunDamage(float damage)
-    {
-        TakeDamage(damage);
-        if (!isDead)
-        {
-            StartCoroutine(StunCoroutine());
-        }
-    }
-
-    private IEnumerator StunCoroutine()
-    {
-        isStunned = true;
-        navAgent.isStopped = true;
-        yield return new WaitForSeconds(3f);
-        isStunned = false;
-        navAgent.isStopped = false;
-    }
-
-    void Die()
-    {
-        isDead = true;
-        navAgent.isStopped = true;
-
-        // 사망 애니메이션
-        animator.SetTrigger("Die");
-
-        // 사망 SFX 재생
-        if (deathSFX)
-        {
-            AudioSource.PlayClipAtPoint(deathSFX, transform.position);
-        }
-
-        // 3초 뒤 Destroy
-        Destroy(gameObject, 3f);
     }
 }
