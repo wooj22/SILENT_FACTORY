@@ -31,9 +31,9 @@ public class Zombie : MonoBehaviour
     private Animator animator;
     private AudioSource audioSource;
     private Transform playerPos;
+    private Player player;
 
     private Coroutine zombieAiCo;
-    private bool isHearPlayerSound;
 
     private void Start()
     {
@@ -41,31 +41,47 @@ public class Zombie : MonoBehaviour
         animator = GetComponent<Animator>();
         audioSource = GetComponent<AudioSource>();
         playerPos = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
 
         zombieAiCo = StartCoroutine(ZombieAI());
         agent.speed = this.speed;
     }
 
-    // 좀비 행동 패턴 ★  ---> isHearPlayerSound를 활용한 발소리 시스템 적용 필요!!!
+    // 좀비 행동 패턴 
     private IEnumerator ZombieAI()
     {
         WaitForSeconds ws = new WaitForSeconds(0.7f);
+        bool isTracking = false;   // 추적상태 유지 제어 변수(한번 인식하면 소리를 안내도 추적 유지)
 
         while (zombieState != ZombieState.DEAD)
         {
             yield return ws;  // 간격
-            
-            // State
+
+            // State Set★
             float currentDist = (playerPos.position - transform.position).magnitude;
 
-            if (currentDist < attackRadius )
+            if (currentDist < attackRadius)
                 zombieState = ZombieState.ATTACK;
             else if (currentDist < detectionRadius)
-                zombieState = ZombieState.TRACE;
+            {
+                if (player.currentMovementState == Player.MovementState.Running ||
+                    player.currentMovementState == Player.MovementState.Walking)
+                {
+                    zombieState = ZombieState.TRACE;
+                    isTracking = true;
+                }
+                else if (isTracking)
+                {
+                    zombieState = ZombieState.TRACE;
+                }
+            }
             else
+            {
                 zombieState = ZombieState.IDLE;
+                isTracking = false;
+            }
 
-            // 살아있을 떄 행동
+            // 행동
             switch (zombieState)
             {
                 case ZombieState.IDLE:      // 1. 기본
