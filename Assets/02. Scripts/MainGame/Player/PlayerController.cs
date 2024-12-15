@@ -39,6 +39,7 @@ public class PlayerController : MonoBehaviour
     [Header("---")]
     [SerializeField] private Player player;
     [SerializeField] private Inventory inventory;
+    [SerializeField] private PlayerStateUI playerStateUI;
     [SerializeField] private Camera mainCamera;
 
     private void Update()
@@ -100,6 +101,7 @@ public class PlayerController : MonoBehaviour
             kar98UI.SetActive(false);
             // 무기 전환 SFX
             player.currentWeapon = Player.WeaponType.AKM;
+            playerStateUI.UpdateWeaponUi();
         }
 
         // R1895
@@ -111,6 +113,7 @@ public class PlayerController : MonoBehaviour
             kar98UI.SetActive(false);
             // 무기 전환 SFX
             player.currentWeapon = Player.WeaponType.R1895;
+            playerStateUI.UpdateWeaponUi();
         }
 
         // S12k
@@ -122,6 +125,7 @@ public class PlayerController : MonoBehaviour
             kar98UI.SetActive(false);
             // 무기 전환 SFX
             player.currentWeapon = Player.WeaponType.S12k;
+            playerStateUI.UpdateWeaponUi();
         }
 
         // Kar98
@@ -133,6 +137,7 @@ public class PlayerController : MonoBehaviour
             kar98UI.SetActive(true);
             // 무기 전환 SFX
             player.currentWeapon = Player.WeaponType.Kar98;
+            playerStateUI.UpdateWeaponUi();
         }
 
         

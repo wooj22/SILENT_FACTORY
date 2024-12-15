@@ -6,7 +6,7 @@ public class Player : MonoBehaviour
 {
     [Header ("Player")]
     [SerializeField] private int maxHealth = 100;
-    [SerializeField] private int currentHealth;
+    [SerializeField] public int currentHealth;
 
     [Header ("State")]
     public MovementState currentMovementState;
@@ -16,6 +16,7 @@ public class Player : MonoBehaviour
     public enum WeaponType { AKM, R1895, S12k, Kar98 }
 
     public bool isDie;
+    public PlayerStateUI playerStateUI;
 
     private void Awake()
     {
@@ -48,6 +49,7 @@ public class Player : MonoBehaviour
     public void Damaged(int damage)
     {
         currentHealth -= damage;
+        playerStateUI.UpdateHpUi();
 
         if (currentHealth <= 0)
         {
@@ -61,6 +63,8 @@ public class Player : MonoBehaviour
     public void Heal(int healAmount)
     {
         currentHealth += healAmount;
+        playerStateUI.UpdateHpUi();
+
         if (currentHealth > maxHealth)
         {
             currentHealth = maxHealth;
