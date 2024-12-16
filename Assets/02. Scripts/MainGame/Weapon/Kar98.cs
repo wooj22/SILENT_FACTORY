@@ -26,6 +26,39 @@ public class Kar98 : MonoBehaviour
     private bool isReloading = false;    // 재장전 여부
     private float lastAttackTime = 0f;   // 마지막 공격 시간
 
+    [Header("Zoom Settings")]
+    public float zoomedFOV = 15f;           // 확대 시 FOV
+    public float normalFOV = 60f;           // 기본 FOV
+    public float zoomSpeed = 10f;           // 배율 전환 속도
+    public Camera playerCamera;             // 플레이어 카메라
+
+    private Coroutine zoomCoroutine;        // 줌 전환 코루틴
+
+    // 배율
+    public void HandleZoomIn()
+    {
+        if (zoomCoroutine != null)
+            StopCoroutine(zoomCoroutine);
+        zoomCoroutine = StartCoroutine(ZoomCoroutine(zoomedFOV));
+    }
+
+    public void HandleZoomOut()
+    {
+        if (zoomCoroutine != null)
+            StopCoroutine(zoomCoroutine);
+        zoomCoroutine = StartCoroutine(ZoomCoroutine(normalFOV));
+    }
+
+    private IEnumerator ZoomCoroutine(float targetFOV)
+    {
+        while (Mathf.Abs(playerCamera.fieldOfView - targetFOV) > 0.1f)
+        {
+            playerCamera.fieldOfView = Mathf.Lerp(playerCamera.fieldOfView, targetFOV, Time.deltaTime * zoomSpeed);
+            yield return null;
+        }
+        playerCamera.fieldOfView = targetFOV;
+    }
+
     // 공격
     public void Attack()
     {

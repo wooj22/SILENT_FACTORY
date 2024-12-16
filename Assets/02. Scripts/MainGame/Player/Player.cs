@@ -59,19 +59,23 @@ public class Player : MonoBehaviour
         }
     }
 
-    // 특수 공격 (X)
-    public void SpecialAttack()
+    // 카구팔 배율
+    public void ZoomIn()
     {
-        Debug.Log("특수 공격");
         switch (currentWeapon)
         {
-            case WeaponType.AKM:
-                break;
-            case WeaponType.R1895:
-                break;
-            case WeaponType.S12k:
-                break;
             case WeaponType.Kar98:
+                kar98.HandleZoomIn();
+                break;
+        }
+    }
+
+    public void ZoomOut()
+    {
+        switch (currentWeapon)
+        {
+            case WeaponType.Kar98:
+                kar98.HandleZoomOut();
                 break;
         }
     }

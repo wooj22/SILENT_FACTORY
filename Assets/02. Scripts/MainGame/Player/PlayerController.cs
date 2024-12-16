@@ -156,10 +156,14 @@ public class PlayerController : MonoBehaviour
             player.Attack();
         }
 
-        // 특수 공격
+        // 배율
         if (Input.GetKey(speacialAttackkey))
         {
-            player.SpecialAttack();
+            player.ZoomIn();
+        }
+        if (Input.GetKeyUp(speacialAttackkey))
+        {
+            player.ZoomOut();
         }
 
         // 재장전
