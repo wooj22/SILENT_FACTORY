@@ -4694,6 +4694,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: VFX_ZombieHit
       objectReference: {fileID: 0}
+    - target: {fileID: 4988936903451484510, guid: 12d36c4669996ce4394e17f556c46a53,
+        type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

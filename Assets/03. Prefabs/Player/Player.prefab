@@ -842,12 +842,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bddc477b1c11e8a4da8a6696d97643ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentAmmo: 0
-  maxAmmo: 0
-  ammoPerShot: 0
-  reloadTime: 0
-  damage: 0
-  attackCoolTime: 0
+  currentAmmo: 6
+  maxAmmo: 6
+  ammoPerShot: 1
+  reloadTime: 3
+  damage: 75
+  attackCoolTime: 0.7
   bulletPrefab: {fileID: 3983140222262263846, guid: 5ad7cfde31983474bad9156e1777d1c0,
     type: 3}
   muzzlePoint: {fileID: 4227030848813975776}
@@ -868,12 +868,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55cef4f151593824faa2fc6677ce9da7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentAmmo: 0
-  maxAmmo: 0
-  ammoPerShot: 0
-  reloadTime: 0
-  damage: 0
-  attackCoolTime: 0
+  currentAmmo: 5
+  maxAmmo: 5
+  ammoPerShot: 1
+  reloadTime: 3
+  damage: 300
+  attackCoolTime: 1
   bulletPrefab: {fileID: 3983140222262263846, guid: 5bc82f2287d65b24da206b36fd76eabb,
     type: 3}
   muzzlePoint: {fileID: 4227030848813975776}
@@ -894,12 +894,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b184ca76114af3c4f97f2771adbb20d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentAmmo: 0
-  maxAmmo: 0
-  ammoPerShot: 0
-  reloadTime: 0
-  damage: 0
-  attackCoolTime: 0
+  currentAmmo: 5
+  maxAmmo: 5
+  ammoPerShot: 1
+  reloadTime: 6
+  damage: 150
+  attackCoolTime: 2
   bulletPrefab: {fileID: 3983140222262263846, guid: 5759436473d01bd4bb2f61ea1107f46d,
     type: 3}
   muzzlePoint: {fileID: 4227030848813975776}
@@ -1703,7 +1703,7 @@ PrefabInstance:
     - target: {fileID: 3236856270755963539, guid: 9b4898f0accce164a90614095c3db963,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

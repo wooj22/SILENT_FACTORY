@@ -4654,7 +4654,7 @@ PrefabInstance:
     - target: {fileID: 4988936903437329436, guid: 12d36c4669996ce4394e17f556c46a53,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.154
+      value: 0.207
       objectReference: {fileID: 0}
     - target: {fileID: 4988936903437329436, guid: 12d36c4669996ce4394e17f556c46a53,
         type: 3}
@@ -4695,6 +4695,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: VFX_ZombieHit
+      objectReference: {fileID: 0}
+    - target: {fileID: 4988936903451484510, guid: 12d36c4669996ce4394e17f556c46a53,
+        type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

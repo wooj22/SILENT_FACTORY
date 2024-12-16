@@ -15,6 +15,6 @@ EditorBuildSettings:
     path: Assets/01. Scenes/MainGame.unity
     guid: 098efac1923288041987694ee17c0f49
   - enabled: 1
-    path: Assets/01. Scenes/Success.unity
+    path: Assets/01. Scenes/Sample/Success.unity
     guid: ddc74efe9ccd4e6419297f54f3a5a567
   m_configObjects: {}
