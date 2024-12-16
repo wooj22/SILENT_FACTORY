@@ -8322,6 +8322,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Essence (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 6534034982729363624, guid: f6d326cdecb0f674d820f65b4d0dc913,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8377282061811043002, guid: f6d326cdecb0f674d820f65b4d0dc913,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -17207,6 +17212,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Essence (18)
       objectReference: {fileID: 0}
+    - target: {fileID: 6534034982729363624, guid: f6d326cdecb0f674d820f65b4d0dc913,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8377282061811043002, guid: f6d326cdecb0f674d820f65b4d0dc913,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -19708,6 +19718,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Essence (13)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6534034982729363624, guid: f6d326cdecb0f674d820f65b4d0dc913,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8377282061811043002, guid: f6d326cdecb0f674d820f65b4d0dc913,
         type: 3}
@@ -43658,6 +43673,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Essence (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 6534034982729363624, guid: f6d326cdecb0f674d820f65b4d0dc913,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8377282061811043002, guid: f6d326cdecb0f674d820f65b4d0dc913,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -45252,6 +45272,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1168814155}
+  - component: {fileID: 1168814156}
   m_Layer: 5
   m_Name: StopPanel
   m_TagString: Untagged
@@ -45282,6 +45303,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1168814156
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1168814154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2dc0068f784832644976e4962777f6be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1169599461
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -45557,6 +45590,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Essence (17)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6534034982729363624, guid: f6d326cdecb0f674d820f65b4d0dc913,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8377282061811043002, guid: f6d326cdecb0f674d820f65b4d0dc913,
         type: 3}
@@ -52188,7 +52226,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1337635253}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1168814156}
+        m_TargetAssemblyTypeName: StopPanel, Assembly-CSharp
+        m_MethodName: Continue
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1337635253
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -52378,6 +52428,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Essence (14)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6534034982729363624, guid: f6d326cdecb0f674d820f65b4d0dc913,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8377282061811043002, guid: f6d326cdecb0f674d820f65b4d0dc913,
         type: 3}
@@ -56326,6 +56381,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Essence (12)
       objectReference: {fileID: 0}
+    - target: {fileID: 6534034982729363624, guid: f6d326cdecb0f674d820f65b4d0dc913,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8377282061811043002, guid: f6d326cdecb0f674d820f65b4d0dc913,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -57666,6 +57726,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Essence (20)
       objectReference: {fileID: 0}
+    - target: {fileID: 6534034982729363624, guid: f6d326cdecb0f674d820f65b4d0dc913,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8377282061811043002, guid: f6d326cdecb0f674d820f65b4d0dc913,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -58445,6 +58510,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Essence (19)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6534034982729363624, guid: f6d326cdecb0f674d820f65b4d0dc913,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8377282061811043002, guid: f6d326cdecb0f674d820f65b4d0dc913,
         type: 3}
@@ -60368,6 +60438,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Essence (21)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6534034982729363624, guid: f6d326cdecb0f674d820f65b4d0dc913,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8377282061811043002, guid: f6d326cdecb0f674d820f65b4d0dc913,
         type: 3}
@@ -67872,7 +67947,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1768772312}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1172417038}
+        m_TargetAssemblyTypeName: SceneSwitch, Assembly-CSharp
+        m_MethodName: SceneSwithcing
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: MainMenu
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1768772312
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -68445,6 +68532,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Essence (16)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6534034982729363624, guid: f6d326cdecb0f674d820f65b4d0dc913,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8377282061811043002, guid: f6d326cdecb0f674d820f65b4d0dc913,
         type: 3}
@@ -74398,6 +74490,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Essence (15)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6534034982729363624, guid: f6d326cdecb0f674d820f65b4d0dc913,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8377282061811043002, guid: f6d326cdecb0f674d820f65b4d0dc913,
         type: 3}
@@ -81374,6 +81471,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7761312482170405318, guid: 00f71aa33592fc74eb048dd6c6dc3a79,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 6c6f9642fb8ed364188354e1a70ecad5, type: 2}
     - target: {fileID: 8115867053858694529, guid: 00f71aa33592fc74eb048dd6c6dc3a79,
         type: 3}
       propertyPath: keyInfoUI
