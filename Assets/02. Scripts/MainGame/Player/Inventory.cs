@@ -12,11 +12,11 @@ public class Inventory : MonoBehaviour
     [SerializeField] Text ammunition12UI;
 
     // ½Àµæ ÇöÈ² count
-    private int essence;
-    private int kit;
-    private int ammunition762;
-    private int ammunition45;
-    private int ammunition12;
+    public int essence;
+    public int kit;
+    public int ammunition762;
+    public int ammunition45;
+    public int ammunition12;
 
     public void UpdateEssence(int n)
     {

@@ -17,6 +17,7 @@ public class Player : MonoBehaviour
 
     public bool isDie;
     public PlayerStateUI playerStateUI;
+    public Inventory inventory;
 
     private void Awake()
     {
@@ -61,13 +62,23 @@ public class Player : MonoBehaviour
     // Èú
     public void Heal(int healAmount)
     {
-        currentHealth += healAmount;
-        if (currentHealth > maxHealth)
+        if(inventory.kit >= 1)
         {
-            currentHealth = maxHealth;
+            currentHealth += healAmount;
+            if (currentHealth > maxHealth)
+            {
+                currentHealth = maxHealth;
+            }
+
+            inventory.UpdateKit(-1);
+            playerStateUI.UpdateHpUi();
+
+            Debug.Log("Èú");
         }
-        playerStateUI.UpdateHpUi();
-        Debug.Log("Èú");
+        else
+        {
+            Debug.Log("±¸±Þ»óÀÚ ¾øÀ½");
+        }
     }
 
     // »ç¸Á
