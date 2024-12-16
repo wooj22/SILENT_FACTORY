@@ -8,8 +8,14 @@ public class GameManager : MonoBehaviour
     [SerializeField] List<GameObject> offGameObjects;
     [SerializeField] Image fadeImage;
     [SerializeField] Text adviceText;
-
+    [SerializeField] Transform machinePos;
     [SerializeField] ParticleSystem playerBlood;
+
+    public int essenceCount = 0;
+    public bool isGetMaxEssence;
+
+    private Transform playerPos;
+    private LineRenderer playerLine;
 
     public static GameManager Instance { get; private set; }
 
@@ -24,6 +30,40 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    // 정수 습득 체크
+    public void GetEssence()
+    {
+        essenceCount++;
+        if(essenceCount >= 10)
+        {
+            isGetMaxEssence = true;
+            EndPathDrawing();
+        }
+    }
+
+    // playerPos부터 machinePos까지 라인렌더러 경로 표시
+    private void EndPathDrawing()
+    {  
+        playerPos = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        playerLine = GameObject.FindGameObjectWithTag("Player").GetComponent<LineRenderer>();
+
+        // LineRenderer
+        playerLine.positionCount = 2;
+        playerLine.startWidth = 0.2f;
+        playerLine.endWidth = 0.2f;
+        playerLine.material = new Material(Shader.Find("Sprites/Default"));
+        playerLine.startColor = Color.blue;
+        playerLine.endColor = Color.red;
+
+        InvokeRepeating(nameof(UpdateLine), 0, 0.5f);
+    }
+
+    private void UpdateLine()
+    {
+        playerLine.SetPosition(0, playerPos.position);
+        playerLine.SetPosition(1, machinePos.position);
     }
 
     public void GameOver()
@@ -73,6 +113,23 @@ public class GameManager : MonoBehaviour
     // 게임성공 연출
     IEnumerator GameSuccessCo()
     {
+        // 성공 사운드
+
+        // 게임 화면애들 없애기
+        for (int i = 0; i < offGameObjects.Count; i++)
+        {
+            offGameObjects[i].SetActive(false);
+        }
+
+        // 페이드
+        StartCoroutine(FadeUI(fadeImage, 3f));
+        yield return new WaitForSeconds(2f);
+
+        // 사망 텍스트
+        adviceText.text = "게임 성공";
+        StartCoroutine(FadeUI(adviceText, 3f));
+        yield return new WaitForSeconds(6f);
+
         SceneSwitch.Instance.SceneSwithcing("MainMenu");
         yield return null;
     }

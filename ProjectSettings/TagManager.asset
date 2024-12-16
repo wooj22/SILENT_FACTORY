@@ -12,6 +12,7 @@ TagManager:
   - Zombie
   - MutatedZombie
   - Barrel
+  - Machine
   layers:
   - Default
   - TransparentFX

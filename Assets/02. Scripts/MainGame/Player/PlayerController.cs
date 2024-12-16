@@ -171,14 +171,29 @@ public class PlayerController : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(mainCamera.transform.position, mainCamera.transform.forward, out hit, interactRange, interactableLayer))
         {
-            interactUI.SetActive(true);
+            // 백신 기계 가동
+            if (hit.collider.CompareTag("Machine"))
+            {
+                if (GameManager.Instance.isGetMaxEssence)
+                {
+                    interactUI.SetActive(true);
+                    if (Input.GetKeyDown(interactKey))
+                    {
+                        GameManager.Instance.GameSuccess();
+                        return;
+                    }
 
+                }
+            }
+
+            interactUI.SetActive(true);
             if (Input.GetKeyDown(interactKey))
             {
                 if (hit.collider.CompareTag("Essence"))
                 {
                     Debug.Log("정수 습득");
                     inventory.UpdateEssence(1);
+                    GameManager.Instance.GetEssence();
                     // 줍기 사운드
                     Destroy(hit.collider.gameObject);
                 }
@@ -209,7 +224,7 @@ public class PlayerController : MonoBehaviour
                     inventory.Update45(30);
                     // 줍기 사운드
                     Destroy(hit.collider.gameObject);
-                }
+                } 
             }
         }
         else
