@@ -99,7 +99,8 @@ public class PlayerController : MonoBehaviour
             r1895UI.SetActive(false);
             s12kUI.SetActive(false);
             kar98UI.SetActive(false);
-            // 무기 전환 SFX
+            
+            SoundManager.Instance.PlaySFX("SFX_Switch");
             player.currentWeapon = Player.WeaponType.AKM;
             playerStateUI.UpdateWeaponUi();
         }
@@ -111,7 +112,8 @@ public class PlayerController : MonoBehaviour
             r1895UI.SetActive(true);
             s12kUI.SetActive(false);
             kar98UI.SetActive(false);
-            // 무기 전환 SFX
+            
+            SoundManager.Instance.PlaySFX("SFX_Switch");
             player.currentWeapon = Player.WeaponType.R1895;
             playerStateUI.UpdateWeaponUi();
         }
@@ -123,7 +125,8 @@ public class PlayerController : MonoBehaviour
             r1895UI.SetActive(false);
             s12kUI.SetActive(true);
             kar98UI.SetActive(false);
-            // 무기 전환 SFX
+            
+            SoundManager.Instance.PlaySFX("SFX_Switch");
             player.currentWeapon = Player.WeaponType.S12k;
             playerStateUI.UpdateWeaponUi();
         }
@@ -135,7 +138,8 @@ public class PlayerController : MonoBehaviour
             r1895UI.SetActive(false);
             s12kUI.SetActive(false);
             kar98UI.SetActive(true);
-            // 무기 전환 SFX
+            
+            SoundManager.Instance.PlaySFX("SFX_Switch");
             player.currentWeapon = Player.WeaponType.Kar98;
             playerStateUI.UpdateWeaponUi();
         }
@@ -194,35 +198,35 @@ public class PlayerController : MonoBehaviour
                     Debug.Log("정수 습득");
                     inventory.UpdateEssence(1);
                     GameManager.Instance.GetEssence();
-                    // 줍기 사운드
+                    SoundManager.Instance.PlaySFX("SFX_Get");
                     Destroy(hit.collider.gameObject);
                 }
                 else if (hit.collider.CompareTag("Kit"))
                 {
                     Debug.Log("구급상자 습득");
                     inventory.UpdateKit(1);
-                    // 줍기 사운드
+                    SoundManager.Instance.PlaySFX("SFX_Get");
                     Destroy(hit.collider.gameObject);
                 }
                 else if (hit.collider.CompareTag("7.62mm"))
                 {
                     Debug.Log("7.62mm 습득");
                     inventory.Update762(40);
-                    // 줍기 사운드
+                    SoundManager.Instance.PlaySFX("SFX_Get");
                     Destroy(hit.collider.gameObject);
                 }
                 else if (hit.collider.CompareTag("12Gauge"))
                 {
                     Debug.Log("12Gauge 습득");
                     inventory.Update12(12);
-                    // 줍기 사운드
+                    SoundManager.Instance.PlaySFX("SFX_Get");
                     Destroy(hit.collider.gameObject);
                 }
                 else if (hit.collider.CompareTag(".45ACP"))
                 {
                     Debug.Log(".45ACP 습득");
                     inventory.Update45(30);
-                    // 줍기 사운드
+                    SoundManager.Instance.PlaySFX("SFX_Get");
                     Destroy(hit.collider.gameObject);
                 } 
             }

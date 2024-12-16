@@ -80,7 +80,8 @@ public class GameManager : MonoBehaviour
     // 게임오버 연출
     IEnumerator GameOverCo()
     {
-        // 사망 사운드
+        SoundManager.Instance.PlaySFX("SFX_Die");
+        SoundManager.Instance.FadeOutBGM();
 
         // 피 이펙트
         playerBlood.Play();
