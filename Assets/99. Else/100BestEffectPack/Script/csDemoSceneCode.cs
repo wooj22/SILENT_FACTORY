@@ -3,6 +3,7 @@ using System.Collections;
 
 public class csDemoSceneCode : MonoBehaviour
 {
+    /*
     public string[] EffectNames;
     public string[] Effect2Names;
     public Transform[] Effect;
@@ -77,4 +78,5 @@ public class csDemoSceneCode : MonoBehaviour
         }
 
     }
+    */
 }
