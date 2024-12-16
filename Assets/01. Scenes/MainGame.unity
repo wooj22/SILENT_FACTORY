@@ -81572,6 +81572,11 @@ PrefabInstance:
       propertyPath: ammunitionText
       value: 
       objectReference: {fileID: 1890752245}
+    - target: {fileID: 4488551479186405953, guid: 00f71aa33592fc74eb048dd6c6dc3a79,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5630419337270797966, guid: 00f71aa33592fc74eb048dd6c6dc3a79,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -81647,6 +81652,11 @@ PrefabInstance:
       propertyPath: stopPannelUI
       value: 
       objectReference: {fileID: 1168814154}
+    - target: {fileID: 8528563244750305384, guid: 00f71aa33592fc74eb048dd6c6dc3a79,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8686490232589361283, guid: 00f71aa33592fc74eb048dd6c6dc3a79,
         type: 3}
       propertyPath: kitUI
