@@ -122,7 +122,7 @@ public class Zombie : MonoBehaviour
     }
 
     // ÇÇ°Ý
-    private void Hit(float damage)
+    public void Hit(float damage)
     {
         hp -= damage;
         animator.SetTrigger("Hit");

@@ -15,6 +15,9 @@ public class Player : MonoBehaviour
     public enum MovementState { Idle, Walking, Running, Sneaking }
     public enum WeaponType { AKM, R1895, S12k, Kar98 }
 
+    [Header("Asset")]
+    [SerializeField] ParticleSystem bloodEffect;
+
     public bool isDie;
     public PlayerStateUI playerStateUI;
     public Inventory inventory;
@@ -56,6 +59,8 @@ public class Player : MonoBehaviour
             Die();
         }
         playerStateUI.UpdateHpUi();
+        bloodEffect.Play();
+        // 피격 사운드
         Debug.Log("공격받음");
     }
 
