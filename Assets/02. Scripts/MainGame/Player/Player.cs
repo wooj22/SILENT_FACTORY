@@ -90,6 +90,7 @@ public class Player : MonoBehaviour
     private void Die()
     {
         isDie = true;
+        GameManager.Instance.GameOver();
         Debug.Log("Á×À½");
     }
 }
