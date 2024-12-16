@@ -64545,6 +64545,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1684865323}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1685759218 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5135915865859505870, guid: 00f71aa33592fc74eb048dd6c6dc3a79,
+    type: 3}
+  m_PrefabInstance: {fileID: 3043848129852687488}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a972f79d6a080845ad094bb4957d132, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1687300141
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -81565,6 +81577,21 @@ PrefabInstance:
       propertyPath: ammunitionText
       value: 
       objectReference: {fileID: 1890752245}
+    - target: {fileID: 1019455605101232484, guid: 00f71aa33592fc74eb048dd6c6dc3a79,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1019455605101232484, guid: 00f71aa33592fc74eb048dd6c6dc3a79,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 5d4e3d32f323d5f4db34a8a282147345, type: 3}
+    - target: {fileID: 1019455605101232484, guid: 00f71aa33592fc74eb048dd6c6dc3a79,
+        type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5630419337270797966, guid: 00f71aa33592fc74eb048dd6c6dc3a79,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -81615,11 +81642,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7761312482170405318, guid: 00f71aa33592fc74eb048dd6c6dc3a79,
+    - target: {fileID: 7859402017814281696, guid: 00f71aa33592fc74eb048dd6c6dc3a79,
         type: 3}
-      propertyPath: m_Materials.Array.data[0]
+      propertyPath: player
       value: 
-      objectReference: {fileID: 2100000, guid: 6c6f9642fb8ed364188354e1a70ecad5, type: 2}
+      objectReference: {fileID: 1685759218}
     - target: {fileID: 8115867053858694529, guid: 00f71aa33592fc74eb048dd6c6dc3a79,
         type: 3}
       propertyPath: keyInfoUI

@@ -14,10 +14,10 @@ public class StopPanel : MonoBehaviour
 
     public void OnDisable()
     {
+        SoundManager.Instance.PlaySFX("SFX_StopPanel");
         Time.timeScale = 1f;
         Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
-        SoundManager.Instance.PlaySFX("SFX_StopPanel");
+        Cursor.visible = false; 
     }
 
     public void Continue()
