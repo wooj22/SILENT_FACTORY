@@ -114,7 +114,7 @@ public class GameManager : MonoBehaviour
     // 게임성공 연출
     IEnumerator GameSuccessCo()
     {
-        // 성공 사운드
+        SoundManager.Instance.PlaySFX("SFX_Machine");
 
         // 게임 화면애들 없애기
         for (int i = 0; i < offGameObjects.Count; i++)

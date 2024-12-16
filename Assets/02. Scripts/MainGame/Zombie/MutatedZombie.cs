@@ -96,7 +96,7 @@ public class MutatedZombie : MonoBehaviour
                     agent.isStopped = true;
                     agent.SetDestination(playerPos.position);
                     animator.SetTrigger("Attack");
-                    // audioSource.PlayOneShot(attackSFX);
+                    audioSource.PlayOneShot(attackSFX);
                     Attack();
                     yield return new WaitForSeconds(attackcoolTime);
                     break;

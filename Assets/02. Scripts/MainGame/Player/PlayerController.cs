@@ -69,7 +69,7 @@ public class PlayerController : MonoBehaviour
         {
             isKeyInfoUiOn = !isKeyInfoUiOn;
             keyInfoUI.SetActive(isKeyInfoUiOn);
-            // on/off SFX
+            SoundManager.Instance.PlaySFX("SFX_UIOnOff");
         }
 
         // 인벤토리 토글
@@ -77,7 +77,7 @@ public class PlayerController : MonoBehaviour
         {
             isInventoryUiOn = !isInventoryUiOn;
             inventoryUI.SetActive(isInventoryUiOn);
-            // on/off SFX
+            SoundManager.Instance.PlaySFX("SFX_UIOnOff");
         }
 
         // 게임 중지 토글
@@ -85,7 +85,7 @@ public class PlayerController : MonoBehaviour
         {
             isStopPannelUiOn = !isStopPannelUiOn;
             stopPannelUI.SetActive(isStopPannelUiOn);
-            // on/off SFX
+            SoundManager.Instance.PlaySFX("SFX_UIOnOff");
         }
     }
 

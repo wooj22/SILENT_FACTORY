@@ -538,7 +538,7 @@ MonoBehaviour:
   attackcoolTime: 5
   detectionRadius: 10
   attackRadius: 2
-  attackSFX: {fileID: 0}
+  attackSFX: {fileID: 8300000, guid: b048173ed50d87f459324e70b40c0a3e, type: 3}
   bloodEffect: {fileID: 5827707956874047821}
 --- !u!1 &691890238491153259
 GameObject:

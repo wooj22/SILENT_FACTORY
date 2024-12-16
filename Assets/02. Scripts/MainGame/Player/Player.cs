@@ -60,7 +60,7 @@ public class Player : MonoBehaviour
         }
         playerStateUI.UpdateHpUi();
         bloodEffect.Play();
-        // 피격 사운드
+        SoundManager.Instance.PlaySFX("SFX_PlayerHit");
         Debug.Log("공격받음");
     }
 
@@ -77,7 +77,7 @@ public class Player : MonoBehaviour
 
             inventory.UpdateKit(-1);
             playerStateUI.UpdateHpUi();
-
+            SoundManager.Instance.PlaySFX("SFX_Heal");
             Debug.Log("힐");
         }
         else

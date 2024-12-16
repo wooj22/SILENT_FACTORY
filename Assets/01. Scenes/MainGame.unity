@@ -37698,7 +37698,11 @@ MonoBehaviour:
   - {fileID: 8300000, guid: a7091f7b917d7e943beb06db935303c5, type: 3}
   - {fileID: 8300000, guid: e7632c6401c09437e83de45d33c5858e, type: 3}
   - {fileID: 8300000, guid: 724131bc8a7f34041bb9f1701f0cb58d, type: 3}
-  - {fileID: 0}
+  - {fileID: 8300000, guid: a73bd47ed7d112748beb49caa41e221f, type: 3}
+  - {fileID: 8300000, guid: 390ff830356852946aee872dff2e759e, type: 3}
+  - {fileID: 8300000, guid: 6acdb07b3e1578d48957d6fe915abdd6, type: 3}
+  - {fileID: 8300000, guid: d94c6e2ef6c2bac4a8322793006cd70a, type: 3}
+  - {fileID: 8300000, guid: 81652031b64c342cc8dbc59c138d77c5, type: 3}
   fadeVolumeTime: 3
 --- !u!82 &993433019
 AudioSource:
