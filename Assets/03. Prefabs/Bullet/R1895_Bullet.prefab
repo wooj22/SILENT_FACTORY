@@ -15,8 +15,8 @@ GameObject:
   - component: {fileID: 8603415001429224750}
   - component: {fileID: 1678052781560167787}
   m_Layer: 12
-  m_Name: AKM_Bullet
-  m_TagString: AKM_Bullet
+  m_Name: R1895_Bullet
+  m_TagString: R1895_Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -147,5 +147,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 15
-  damage: 20
+  damage: 75
   lifetime: 10

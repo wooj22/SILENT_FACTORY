@@ -48,11 +48,13 @@ public class Player : MonoBehaviour
                 akm.Attack();
                 break;
             case WeaponType.R1895:
-                
+                r1895.Attack();
                 break;
             case WeaponType.S12k:
+                s12K.Attack();
                 break;
             case WeaponType.Kar98:
+                kar98.Attack();
                 break;
         }
     }
@@ -84,10 +86,13 @@ public class Player : MonoBehaviour
                 akm.ReLoading();
                 break;
             case WeaponType.R1895:
+                r1895.ReLoading();
                 break;
             case WeaponType.S12k:
+                s12K.ReLoading();
                 break;
             case WeaponType.Kar98:
+                kar98.ReLoading();
                 break;
         }
     }

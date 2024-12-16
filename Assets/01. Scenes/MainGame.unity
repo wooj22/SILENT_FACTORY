@@ -68898,30 +68898,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1786044298}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1786318929 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8686490232589361283, guid: 00f71aa33592fc74eb048dd6c6dc3a79,
-    type: 3}
-  m_PrefabInstance: {fileID: 3043848129852687488}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f912cf36f33951542b8fb64b1056aba8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1786318930 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 641830191674668697, guid: 00f71aa33592fc74eb048dd6c6dc3a79,
-    type: 3}
-  m_PrefabInstance: {fileID: 3043848129852687488}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c929ab241ead314bb2a3a199cfc622f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1796222348
 GameObject:
   m_ObjectHideFlags: 0
@@ -81590,26 +81566,6 @@ PrefabInstance:
       propertyPath: ammunitionText
       value: 
       objectReference: {fileID: 1890752245}
-    - target: {fileID: 1916527264649645168, guid: 00f71aa33592fc74eb048dd6c6dc3a79,
-        type: 3}
-      propertyPath: inventory
-      value: 
-      objectReference: {fileID: 1786318929}
-    - target: {fileID: 1916527264649645168, guid: 00f71aa33592fc74eb048dd6c6dc3a79,
-        type: 3}
-      propertyPath: currentAmmo
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 1916527264649645168, guid: 00f71aa33592fc74eb048dd6c6dc3a79,
-        type: 3}
-      propertyPath: playerStateUI
-      value: 
-      objectReference: {fileID: 1786318930}
-    - target: {fileID: 1916527264649645168, guid: 00f71aa33592fc74eb048dd6c6dc3a79,
-        type: 3}
-      propertyPath: attackCoolTime
-      value: 0.2
-      objectReference: {fileID: 0}
     - target: {fileID: 5630419337270797966, guid: 00f71aa33592fc74eb048dd6c6dc3a79,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -81660,6 +81616,96 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5675311934617368454, guid: 00f71aa33592fc74eb048dd6c6dc3a79,
+        type: 3}
+      propertyPath: damage
+      value: 75
+      objectReference: {fileID: 0}
+    - target: {fileID: 5675311934617368454, guid: 00f71aa33592fc74eb048dd6c6dc3a79,
+        type: 3}
+      propertyPath: maxAmmo
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5675311934617368454, guid: 00f71aa33592fc74eb048dd6c6dc3a79,
+        type: 3}
+      propertyPath: reloadTime
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5675311934617368454, guid: 00f71aa33592fc74eb048dd6c6dc3a79,
+        type: 3}
+      propertyPath: ammoPerShot
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5675311934617368454, guid: 00f71aa33592fc74eb048dd6c6dc3a79,
+        type: 3}
+      propertyPath: currentAmmo
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5675311934617368454, guid: 00f71aa33592fc74eb048dd6c6dc3a79,
+        type: 3}
+      propertyPath: attackCoolTime
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7762099028865995270, guid: 00f71aa33592fc74eb048dd6c6dc3a79,
+        type: 3}
+      propertyPath: damage
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 7762099028865995270, guid: 00f71aa33592fc74eb048dd6c6dc3a79,
+        type: 3}
+      propertyPath: maxAmmo
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7762099028865995270, guid: 00f71aa33592fc74eb048dd6c6dc3a79,
+        type: 3}
+      propertyPath: reloadTime
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7762099028865995270, guid: 00f71aa33592fc74eb048dd6c6dc3a79,
+        type: 3}
+      propertyPath: ammoPerShot
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7762099028865995270, guid: 00f71aa33592fc74eb048dd6c6dc3a79,
+        type: 3}
+      propertyPath: currentAmmo
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7762099028865995270, guid: 00f71aa33592fc74eb048dd6c6dc3a79,
+        type: 3}
+      propertyPath: attackCoolTime
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8095429861037016166, guid: 00f71aa33592fc74eb048dd6c6dc3a79,
+        type: 3}
+      propertyPath: damage
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 8095429861037016166, guid: 00f71aa33592fc74eb048dd6c6dc3a79,
+        type: 3}
+      propertyPath: maxAmmo
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8095429861037016166, guid: 00f71aa33592fc74eb048dd6c6dc3a79,
+        type: 3}
+      propertyPath: reloadTime
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8095429861037016166, guid: 00f71aa33592fc74eb048dd6c6dc3a79,
+        type: 3}
+      propertyPath: ammoPerShot
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8095429861037016166, guid: 00f71aa33592fc74eb048dd6c6dc3a79,
+        type: 3}
+      propertyPath: currentAmmo
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8095429861037016166, guid: 00f71aa33592fc74eb048dd6c6dc3a79,
+        type: 3}
+      propertyPath: attackCoolTime
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8115867053858694529, guid: 00f71aa33592fc74eb048dd6c6dc3a79,
         type: 3}
       propertyPath: keyInfoUI
@@ -81680,6 +81726,11 @@ PrefabInstance:
       propertyPath: stopPannelUI
       value: 
       objectReference: {fileID: 1168814154}
+    - target: {fileID: 8528563244750305384, guid: 00f71aa33592fc74eb048dd6c6dc3a79,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8686490232589361283, guid: 00f71aa33592fc74eb048dd6c6dc3a79,
         type: 3}
       propertyPath: kitUI

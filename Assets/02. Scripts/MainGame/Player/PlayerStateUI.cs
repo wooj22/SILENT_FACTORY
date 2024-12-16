@@ -25,7 +25,7 @@ public class PlayerStateUI : MonoBehaviour
     // HP
     public void UpdateHpUi()
     {
-        hpBar.fillAmount = player.currentHealth;
+        hpBar.fillAmount = player.currentHealth * 0.01f;
         hpText.text = (player.currentHealth).ToString();
     }
 
