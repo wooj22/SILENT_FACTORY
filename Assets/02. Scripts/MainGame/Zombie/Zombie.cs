@@ -130,7 +130,20 @@ public class Zombie : MonoBehaviour
 
         if(hp < 1f)
         {
+            // »ç¸Á 
+            StopCoroutine(zombieAiCo);
+
             zombieState = ZombieState.DEAD;
+            agent.isStopped = true;
+            animator.SetTrigger("Die");
+
+            Invoke(nameof(Initialization), 4f);
         }
+    }
+
+    private void Initialization()
+    {
+        gameObject.SetActive(false);
+        zombieState = ZombieState.IDLE;
     }
 }

@@ -102,15 +102,6 @@ public class MutatedZombie : MonoBehaviour
                     break;
             }
         }
-
-        // »ç¸Á
-        agent.isStopped = true;
-        animator.SetTrigger("Die");
-        yield return new WaitForSeconds(4f);
-
-        gameObject.SetActive(false);
-        zombieState = ZombieState.PATROL;
-
         yield return null;
     }
 
@@ -145,7 +136,20 @@ public class MutatedZombie : MonoBehaviour
 
         if (hp < 1f)
         {
+            // »ç¸Á 
+            StopCoroutine(zombieAiCo);
+
             zombieState = ZombieState.DEAD;
+            agent.isStopped = true;
+            animator.SetTrigger("Die");
+
+            Invoke(nameof(Initialization), 4f);
         }
+    }
+
+    private void Initialization()
+    {
+        gameObject.SetActive(false);
+        zombieState = ZombieState.PATROL;
     }
 }
