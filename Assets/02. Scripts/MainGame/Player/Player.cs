@@ -18,9 +18,16 @@ public class Player : MonoBehaviour
     [Header("Asset")]
     [SerializeField] ParticleSystem bloodEffect;
 
+    [Header("---")]
     public bool isDie;
     public PlayerStateUI playerStateUI;
     public Inventory inventory;
+
+    // Weapons
+    [SerializeField] private Akm akm;
+    [SerializeField] private R1895 r1895;
+    [SerializeField] private S12k s12K;
+    [SerializeField] private Kar98 kar98;
 
     private void Awake()
     {
@@ -35,18 +42,54 @@ public class Player : MonoBehaviour
     public void Attack()
     {
         Debug.Log("일반공격");
+        switch (currentWeapon)
+        {
+            case WeaponType.AKM:
+                akm.Attack();
+                break;
+            case WeaponType.R1895:
+                
+                break;
+            case WeaponType.S12k:
+                break;
+            case WeaponType.Kar98:
+                break;
+        }
     }
 
-    // 특수 공격
+    // 특수 공격 (X)
     public void SpecialAttack()
     {
         Debug.Log("특수 공격");
+        switch (currentWeapon)
+        {
+            case WeaponType.AKM:
+                break;
+            case WeaponType.R1895:
+                break;
+            case WeaponType.S12k:
+                break;
+            case WeaponType.Kar98:
+                break;
+        }
     }
 
     // 재장전
     public void Reloading()
     {
         Debug.Log("재장전");
+        switch (currentWeapon)
+        {
+            case WeaponType.AKM:
+                akm.ReLoading();
+                break;
+            case WeaponType.R1895:
+                break;
+            case WeaponType.S12k:
+                break;
+            case WeaponType.Kar98:
+                break;
+        }
     }
 
     // 피격

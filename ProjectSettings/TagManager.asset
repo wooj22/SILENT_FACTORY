@@ -13,6 +13,10 @@ TagManager:
   - MutatedZombie
   - Barrel
   - Machine
+  - AKM_Bullet
+  - R1895_Bullet
+  - S12k_Bullet
+  - Kar98_Bullet
   layers:
   - Default
   - TransparentFX
@@ -26,7 +30,7 @@ TagManager:
   - 
   - Player
   - Interactable
-  - 
+  - Bullet
   - 
   - 
   - 

@@ -128,7 +128,7 @@ public class Zombie : MonoBehaviour
         animator.SetTrigger("Hit");
         bloodEffect.Play();
 
-        if(hp < 0.001f)
+        if(hp < 1f)
         {
             zombieState = ZombieState.DEAD;
         }

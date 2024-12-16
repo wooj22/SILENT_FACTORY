@@ -137,13 +137,13 @@ public class MutatedZombie : MonoBehaviour
     }
 
     // ÇÇ°Ý
-    private void Hit(float damage)
+    public void Hit(float damage)
     {
         hp -= damage;
         animator.SetTrigger("Hit");
         bloodEffect.Play();
 
-        if (hp < 0.001f)
+        if (hp < 1f)
         {
             zombieState = ZombieState.DEAD;
         }

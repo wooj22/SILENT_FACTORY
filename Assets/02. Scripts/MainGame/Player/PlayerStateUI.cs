@@ -56,9 +56,35 @@ public class PlayerStateUI : MonoBehaviour
     }
 
     // ÀÜ¿© Åº¾à
-    public void UpdateAmmunitionUi()
+    public void UpdateAmmunitionUi(int current, int max, int use)
     {
-        //Player.WeaponType.AKM
+        switch (player.currentWeapon)
+        {
+            case Player.WeaponType.AKM:
+                inventory.Update762(-use);
+                ammunitionText.text =
+                    current + "/" + max + " (" + inventory.ammunition762 + ")";
+                break;
+            case Player.WeaponType.R1895:
+                inventory.Update45(-use);
+                ammunitionText.text =
+                    current + "/" + max + " (" + inventory.ammunition45 + ")";
+                break;
+            case Player.WeaponType.S12k:
+                inventory.Update12(-use);
+                ammunitionText.text =
+                    current + "/" + max + " (" + inventory.ammunition12 + ")";
+                break;
+            case Player.WeaponType.Kar98:
+                inventory.Update762(-use);
+                ammunitionText.text =
+                    current + "/" + max + " (" + inventory.ammunition762 + ")";
+                break;
+            default:
+                break;
+        }
+
+
     }
 
     // Æ¯¼ö °ø°Ý ÄðÅ¸ÀÓ
