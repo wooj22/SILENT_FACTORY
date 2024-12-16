@@ -11,6 +11,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] Transform machinePos;
     [SerializeField] ParticleSystem playerBlood;
 
+    [SerializeField] AudioSource audios;
+
     public int essenceCount = 0;
     public bool isGetMaxEssence;
 
@@ -80,10 +82,9 @@ public class GameManager : MonoBehaviour
     // 게임오버 연출
     IEnumerator GameOverCo()
     {
+        audios.Play();
         SoundManager.Instance.PlaySFX("SFX_Die");
         SoundManager.Instance.FadeOutBGM();
-
-        // 피 이펙트
         playerBlood.Play();
 
         // 게임 화면애들 없애기
